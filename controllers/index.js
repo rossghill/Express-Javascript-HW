@@ -1,3 +1,6 @@
-const films = require('../client/src/models/films')();
-const Film = require('../client/src/models/film');
-const Review = require('../client/src/models/review');
+const express = require('express');
+const router = new express.Router();
+
+router.use('/films', require('./films'));
+
+module.exports = router;

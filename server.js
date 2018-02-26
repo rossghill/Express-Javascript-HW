@@ -5,11 +5,8 @@ app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({extended: true}));
 
 app.use(express.static('client/build'));
-
-app.get('/', function(req, res) {
-  res.json({data: "hello"})
-});
+app.use(require('./controllers/index'));
 
 app.listen(3000, function () {
-  console.log('App running on port '+this.address().port);
+  console.log('App running on port '+ this.address().port);
 });
